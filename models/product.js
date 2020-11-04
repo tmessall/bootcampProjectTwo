@@ -3,8 +3,8 @@ module.exports = function(sequelize, DataTypes) {
       name: DataTypes.STRING,
       username: DataTypes.STRING,
       description: DataTypes.STRING,
-      likes: DataTypes.INT,
-      dislikes: DataTypes.INT
+      likes: DataTypes.INTEGER,
+      dislikes: DataTypes.INTEGER
     });
     return Product;
   };

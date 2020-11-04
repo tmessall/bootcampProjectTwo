@@ -10,4 +10,6 @@ CREATE TABLE products (
     description TEXT NOT NULL,
     likes INT default 0,
     dislikes INT default 0
-)
+);
+
+INSERT INTO products (name, username, description) VALUES ("guitar", "me", "jallkjasdjklasdf")
