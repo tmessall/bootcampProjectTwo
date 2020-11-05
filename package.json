@@ -13,11 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3",
-<<<<<<< HEAD
-    "handlebars": "^4.7.6",
-=======
     "express-handlebars": "^5.2.0",
->>>>>>> main
     "mysql2": "^1.6.4",
     "sequelize": "^4.41.2"
   }
