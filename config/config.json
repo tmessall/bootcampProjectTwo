@@ -1,17 +1,15 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
+
     "password": "Icuryy4me!",
-=======
-    "password": "HaHaidkman!",
->>>>>>> main
     "database": "congo_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
+
     "password": "Icuryyme!",
     "database": "congo_db",
     "host": "127.0.0.1",

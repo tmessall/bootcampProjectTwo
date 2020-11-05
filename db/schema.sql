@@ -9,6 +9,8 @@ CREATE TABLE products (
     username VARCHAR(40) NOT NULL,
     description TEXT NOT NULL,
     likes INT default 0,
-    dislikes INT default 0
+    dislikes INT default 0,
+    createdAt TIMESTAMP,
+    updatedAt TIMESTAMP
 );
 
