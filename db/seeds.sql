@@ -5,7 +5,7 @@ INSERT INTO products (name, username, description) VALUES ("Gibson-Les-Paul-guit
 INSERT INTO products (name, username, description) VALUES ("Fender-stratocaster-guitars", "Nora", "Probably one of the most famous guitars used by none other then Jimi Hendrix.");
 INSERT INTO products (name, username, description) VALUES ("Fender-jaguar-guitars", "Nora", "A sort of upgraded model of its predecessor the jazz master was popular among punk rock.");
 INSERT INTO products (name, username, description) VALUES ("Ephiphone-SG-guitars", "Chand", "A copycat and somewhat cheaper model of it's owner Angus Young of AC/DC goes lighter on your wallet.");
-INSERT INTO products (name, username, description) VALUES ("Fender-jazz-bass", "Jean", "Fender strikes again with their bass models with Mark Hoppus as one of its many users.")
+INSERT INTO products (name, username, description) VALUES ("Fender-jazz-bass", "Jean", "Fender strikes again with their bass models with Mark Hoppus as one of its many users.");
 INSERT INTO products (name, username, description) VALUES ("Rickenbacker-bass", "Jean", "Used by the great Paul McCartney, enough said.");
 INSERT INTO products (name, username, description) VALUES ("Orange-County-drums", "Travis", "A home based company in Anahiem California home of the mighty ducks, but custom made kits are only for Travis Barker and Atom Willard. No one else can get anymore because Joey Jordison had them make him a 20 peice set or some huge number.");
 INSERT INTO products (name, username, description) VALUES ("DW-drums", "Travis", "While using the brand from Orange County Atom Willard is an official endorser of Drum workshop.");
