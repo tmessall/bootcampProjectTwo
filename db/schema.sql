@@ -12,4 +12,3 @@ CREATE TABLE products (
     dislikes INT default 0
 );
 
-INSERT INTO products (name, username, description) VALUES ("guitar", "me", "jallkjasdjklasdf")
