@@ -1,5 +1,3 @@
-
-
 INSERT INTO products (name, username, description) VALUES ("Gibson-Es325-guitars", "Charlie", "An electric guitar that stands for Electric Spanish that is also a semi acoustic guitar. Gibson created this type of guitar to find middle ground to have a warmer tone and flexible for a wide range of music such as blues, jazz, and rock. Most notable legends that use this guitar stem from Chuck Berry, Eric Clapton, Matry Mcfly(Yes, that marty!), and of course my favorite artist Tom Delonge of Angels and Airwaves.");
 INSERT INTO products (name, username, description) VALUES ("Gibson-Les-Paul-guitars", "Charlie", "Named after and endorsed by famed jazz musician made in 1952 is a very common guitar for many legends of rock and roll and other genres like Chad Gilbert of New Found Glory.");
 INSERT INTO products (name, username, description) VALUES ("Fender-stratocaster-guitars", "Nora", "Probably one of the most famous guitars used by none other then Jimi Hendrix.");
