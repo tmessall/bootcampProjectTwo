@@ -20,5 +20,5 @@ CREATE TABLE users (
     password TEXT NULL,
     createdAt TIMESTAMP,
     updatedAt TIMESTAMP
-)
+);
 
