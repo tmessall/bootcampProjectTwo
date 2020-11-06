@@ -28,14 +28,13 @@ $("#submission").on("click", function (event) {
   });
 
 
-  $("#submission").on("click", function (event) {
+  $(".signUp").on("click", function (event) {
+    event.preventDefault();
     console.log("click");
     
     var hash = CryptoJS.MD5("Message");
      console.log(hash.toString());
 
-
-    event.preventDefault();
 
    
      var Uname = $("#username").val();
@@ -51,12 +50,12 @@ $("#submission").on("click", function (event) {
 
     console.log(newUser);
 
-    $.ajax("/api/user", {
+    $.ajax("/api/users", {
       type: "POST",
       data: newUser
     }).then(function () {
 
-      location.reload();
+      // location.reload();
       console.log("added a new order");
     })
   });
