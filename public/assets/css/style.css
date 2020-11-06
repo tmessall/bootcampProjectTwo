@@ -1,4 +1,10 @@
 
+body {
+    border: 5px solid red;
+}
+
+
+
 .login-box {
     text-align: center;
     padding-top: 10px;
@@ -7,3 +13,4 @@
     margin-top: 20px;
     border: gray 1px solid;
 }
+
