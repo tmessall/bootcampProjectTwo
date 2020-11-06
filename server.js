@@ -1,6 +1,8 @@
 // *** Dependencies
 // =============================================================
 var express = require("express");
+var CryptoJS = require("crypto-js/md5");
+var SHA256 = require("crypto-js/sha256");
 
 // Sets up the Express App
 // =============================================================

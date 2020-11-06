@@ -1,5 +1,6 @@
 var db = require("../models");
 
+
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -47,6 +48,16 @@ module.exports = function(app) {
             }
         }).then(function (dbProduct) {
             res.json(dbProduct);
+        });
+    });
+
+
+    app.post("/api/users", function (req, res) {
+        db.User.create({
+            name: req.body.name,
+            password : req.body.password
+        }).then(function (dbUser) {
+            res.json(dbUser);
         });
     });
 
