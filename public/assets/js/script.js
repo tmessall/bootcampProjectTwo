@@ -1,66 +1,57 @@
+$(".alert").hide();
 
-
-
-
+// Adding a new product on the main page
 $("#submission").on("click", function (event) {
-    console.log("click");
-    
-    var hash = CryptoJS.MD5("Message");
-     console.log(hash.toString());
+  event.preventDefault();
 
+  var newProduct = {
+    name: $(".product").val(),
+    username: $(".Uname").val(),
+    description: $(".description").val(),
+  };
 
-    event.preventDefault();
-    var newItem = {
-      name: $(".product").val(),
-      username : $(".Uname").val(),
-      description : $(".description").val(),
-    
-    };
-    console.log(newItem);
-    $.ajax("/api/products", {
-      type: "POST",
-      data: newItem
-    }).then(function () {
+  $.ajax("/api/products", {
+    type: "POST",
+    data: newProduct
+  }).then(function () {
+    location.reload();
+  })
+});
 
-      location.reload();
-      console.log("added a new order");
-    })
-  });
+// Adding a new user on signup
+$("#signUp").on("click", function (event) {
+  event.preventDefault();
+  // Signs up user
+  signUpUser();
+});
 
+function signUpUser() {
+  var checked = checkPasswordMatch();
+  console.log(checked);
+  if (checked) {
+    var Uname = $("#username").val();
+    var password = $("#password").val();
+    var md5Pass = CryptoJS.MD5(password).toString();
 
-  $(".signUp").on("click", function (event) {
-    event.preventDefault();
-    console.log("click");
-    
-    var hash = CryptoJS.MD5("Message");
-     console.log(hash.toString());
-
-
-   
-     var Uname = $("#username").val();
-     var password = $("#password").val();
-     var md5Pass = CryptoJS.MD5(password).toString();
-
-     var newUser = {
+    var newUser = {
       name: Uname,
-      password : md5Pass
-    
+      password: md5Pass
     };
-      
-
-    console.log(newUser);
 
     $.ajax("/api/users", {
       type: "POST",
       data: newUser
     }).then(function () {
-
-      // location.reload();
-      console.log("added a new order");
+      location.reload();
     })
-  });
+  } else {
+    $("#password").val("");
+    $("#confirmPassword").val("");
+    $("#passNoMatch").show();
+  }
+}
 
 
-
-
-  
+function checkPasswordMatch() {
+  return $("#password").val() == $("#confirmPassword").val();
+}
