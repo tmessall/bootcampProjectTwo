@@ -1,6 +1,5 @@
 var db = require("../models");
 
-
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -51,12 +50,14 @@ module.exports = function(app) {
         });
     });
 
+    // GET route to get all users
     app.get("/api/users", function (req, res) {
         db.User.findAll({}).then(function (dbUser) {
             res.json(dbUser);
         });
     })
 
+    // POST route so sign up a new user
     app.post("/api/users", function (req, res) {
         db.User.create({
             name: req.body.name,
