@@ -29,15 +29,25 @@ $("#signUp").on("click", function (event) {
 function signUpUser() {
   var checked = checkPasswordMatch();
   if (checked) {
-    var newUser = checkNewUser();
-    if (newUser) {
-      finishSignUp();
-    } else {
-      $("#username").val("");
-      $("#password").val("");
-      $("#confirmPassword").val("");
-      $("#userTaken").show();
-    }
+    var newUser = true;
+    $.ajax("/api/users", {
+      type: "GET"
+    }).then(res => {
+      res.forEach(user => {
+        console.log(user.name);
+        if (user.name == $("#usernameSign").val()) {
+          newUser = false;
+        }
+      });
+      if (newUser) {
+        finishSignUp();
+      } else {
+        $("#usernameSign").val("");
+        $("#password").val("");
+        $("#confirmPassword").val("");
+        $("#userTaken").show();
+      }
+    });
   } else {
     $("#password").val("");
     $("#confirmPassword").val("");
@@ -49,21 +59,9 @@ function checkPasswordMatch() {
   return $("#password").val() == $("#confirmPassword").val();
 }
 
-function checkNewUser() {
-  $.ajax("/api/users", {
-    type: "GET"
-  }).then(res => {
-    res.forEach(user => {
-      if (user.name == $("#username").val()) {
-        return false;
-      }
-    })
-    return true;
-  });
-}
-
 function finishSignUp() {
-  var Uname = $("#username").val();
+  console.log("signing up");
+  var Uname = $("#usernameSign").val();
   var password = $("#password").val();
   var md5Pass = CryptoJS.MD5(password).toString();
 
@@ -76,7 +74,7 @@ function finishSignUp() {
     type: "POST",
     data: newUser
   }).then(function () {
-    location.reload();
+    window.location.replace('/');
   })
 }
 
