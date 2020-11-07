@@ -2,31 +2,29 @@
 <h2>Stay on Beat</h2>
 <p></p>
 
-
-
-
-
-
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-2 col-md-3 col-lg-4"></div>
         <div class="col-sm-8 col-md-6 col-lg-4 login-box">
-            <h1>Congo Sign up :</h1>
+            <h1>Congo Sign Up:</h1>
+
+            <p id="passNoMatch" class="alert">Passwords do not match.</p>
+            <p id="userTaken" class="alert">That username is taken.</p>
+
             <form>
                 <fieldset>
-                    <p>Username</p>
-                    <input type="text" id="username">
+                    <p>Username:</p>
+                    <input type="text" id="usernameSign">
                     <br></br>
 
-                    <p>Password :</p>
+                    <p>Password:</p>
                     <input type="text" id="password">
                     <br></br>
 
-                    <p>Confirm password :</p>
+                    <p>Confirm password:</p>
                     <input type="text" id="confirmPassword">
                     <br></br>
-                     <input class="signUp" type="submit" value="Submit">
+                     <input type="submit" value="Sign Up" id="signUp">
                 </fieldset>
             </form>
         </div>

@@ -1,9 +1,6 @@
-
 body {
     border: 5px solid red;
 }
-
-
 
 .login-box {
     text-align: center;
@@ -14,3 +11,6 @@ body {
     border: gray 1px solid;
 }
 
+.alert {
+    color: red;
+}
