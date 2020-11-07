@@ -1,6 +1,5 @@
 var db = require("../models");
 
-
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -53,6 +52,7 @@ module.exports = function(app) {
 
     
 
+    // POST route so sign up a new user
     app.post("/api/users", function (req, res) {
         db.User.create({
             name: req.body.name,
