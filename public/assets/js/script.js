@@ -27,21 +27,25 @@ $("#signUp").on("click", function (event) {
 });
 
 function signUpUser() {
+  // Checks that confirm password and password are identical
   var checked = checkPasswordMatch();
   if (checked) {
     var newUser = true;
+    // ajax call has to happen in a certain order, so this can't be separated out into another function
+    // call serves to make sure no duplicate usernames
     $.ajax("/api/users", {
       type: "GET"
     }).then(res => {
       res.forEach(user => {
         console.log(user.name);
-        if (user.name == $("#usernameSign").val()) {
+        if (user.name.toLowerCase() == $("#usernameSign").val().toLowerCase()) {
           newUser = false;
         }
       });
       if (newUser) {
         finishSignUp();
       } else {
+        // Clears fields and tells user the issue
         $("#usernameSign").val("");
         $("#password").val("");
         $("#confirmPassword").val("");
@@ -49,6 +53,7 @@ function signUpUser() {
       }
     });
   } else {
+    // Clears fields and tells user the issue
     $("#password").val("");
     $("#confirmPassword").val("");
     $("#passNoMatch").show();
@@ -59,6 +64,7 @@ function checkPasswordMatch() {
   return $("#password").val() == $("#confirmPassword").val();
 }
 
+// Adds new user to db
 function finishSignUp() {
   console.log("signing up");
   var Uname = $("#usernameSign").val();
@@ -78,6 +84,7 @@ function finishSignUp() {
   })
 }
 
+// Allows user to continue to main page without logging in
 $("#guestLoad").on("click", function(event) {
   event.preventDefault(event);
   $.ajax("/", {
