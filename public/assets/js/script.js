@@ -21,6 +21,7 @@ $("#submission").on("click", function (event) {
 // Adding a new user on signup
 $("#signUp").on("click", function (event) {
   event.preventDefault();
+  $(".alert").hide();
   // Signs up user
   signUpUser();
 });
@@ -53,7 +54,7 @@ function checkNewUser() {
     type: "GET"
   }).then(res => {
     res.forEach(user => {
-      if (user.name == $("#username").val) {
+      if (user.name == $("#username").val()) {
         return false;
       }
     })
@@ -78,3 +79,13 @@ function finishSignUp() {
     location.reload();
   })
 }
+
+$("#guestLoad").on("click", function(event) {
+  event.preventDefault(event);
+  $.ajax("/", {
+    type: "GET",
+  }).then(function (res) {
+    console.log("idk")
+    window.location.replace('/')
+  });
+});

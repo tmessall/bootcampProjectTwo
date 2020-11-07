@@ -1,7 +1,6 @@
 {
   "development": {
     "username": "root",
-
     "password": "password",
     "database": "congo_db",
     "host": "127.0.0.1",
@@ -9,7 +8,6 @@
   },
   "test": {
     "username": "root",
-
     "password": "Icuryyme!",
     "database": "congo_db",
     "host": "127.0.0.1",
