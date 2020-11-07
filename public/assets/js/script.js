@@ -55,7 +55,7 @@ $("#submission").on("click", function (event) {
       data: newUser
     }).then(function () {
 
-      // location.reload();
+      location.reload();
       console.log("added a new order");
     })
   });
