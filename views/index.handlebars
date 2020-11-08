@@ -33,12 +33,19 @@
     </ul>
   </div>
 </nav>
+<!--image-->
+{{#each allProducts}}
 <div class="container-fluid">
+<<<<<<< HEAD
   <class="row">
     <div class="col-12 col-md-4">
+=======
+  <div class="row">
+    <div class="col-6">
+>>>>>>> main
       <div class="card">
         <div class="card-body">
-          <h2 class="highlight">blah blah blah</h2>
+          <h2 class="highlight">{{this.name}}</h2>
         </div>
         <img id="car" class="card-img-top img-fluid" src="" alt="Picture of item" />
       </div>
@@ -47,18 +54,21 @@
       </section>
     </div>
     <!--sec col and bio par-->
+<<<<<<< HEAD
     <div class="col-4" >
+=======
+    <div class="col-6">
+>>>>>>> main
       <section class="bio">
         <!-- bio Paragraph -->
         <p id="first-paragraph">
-          blah blah blah cool produck yeah its cooll dahdhadhahdahdhadhahhdahdhahdahdhhadhahdhahd
-          dhahdhahdhahdahdhhahdhadhahdhadakjdjkajdjad
-          dahdhadhahdahdhadhahhdahdhahdahdhhadhahdhahd
+          {{this.description}}
         </p>
       </section>
     </div>
   </div>
 </div>
+<<<<<<< HEAD
     <!--like bottons-->
     <div class="buttons">
       <div class="col-4" >
@@ -86,3 +96,36 @@
         <textarea class = "description" name="message" rows="10" cols="30"></textarea>
         <button id ="submission" type = "submit"> Submit </button>
       </div>
+=======
+<!--like bottons-->
+<div class="buttons">
+  <div class="col-4">
+    <button class="btn btn-primary"><i class="fa fa-thumbs-up"></i> Like</button>
+    <button class="btn btn-secondary"><i class="fa fa-thumbs-up"></i> Dislike</button>
+  </div>
+</div>
+{{/each}}
+
+<!--item imput-->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4" style="width: 18rem;">
+    </div>
+
+    <div class="col-4 input" style="width: 18rem;">
+      <form>
+        <h4>Product Name :</h4>
+        <textarea class="product" type="text" name="productName"></textarea><br>
+      </form>
+
+      <h4>Brief Description : </h4>
+      <textarea class="description" name="message" rows="10" cols="30" placeholder="Brief description..."></textarea>
+      <br></br>
+      <button id="submission" type="submit"> Submit </button>
+    </div>
+
+    <div class="col-4" style="width: 18rem;">
+    </div>
+  </div>
+</div>
+>>>>>>> main
