@@ -8,10 +8,12 @@ CREATE TABLE products (
     name VARCHAR(100) NOT NULL,
     userID INTEGER NOT NULL,
     description TEXT NOT NULL,
+    imageUrl TEXT,
     likes INT default 0,
     dislikes INT default 0,
     createdAt TIMESTAMP,
     updatedAt TIMESTAMP
+    
 );
 
 CREATE TABLE users (
