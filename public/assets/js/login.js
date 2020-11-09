@@ -2,7 +2,16 @@ function checkPasswordDB() {
   return $("#password").val() == $("#confirmPassword").val();
 }
 
-   
+// Allows user to continue to main page without logging in
+$("#guestLoad").on("click", function (event) {
+  event.preventDefault(event);
+    window.location.replace('/')
+});
+
+$("#goSign").on("click", function (event) {
+  event.preventDefault(event);
+    window.location.replace('/signup')
+})
 
 $("#submit").on("click", function (e) {
   e.preventDefault();

@@ -83,17 +83,6 @@ function finishSignUp() {
   })
 }
 
-// Allows user to continue to main page without logging in
-$("#guestLoad").on("click", function (event) {
-  event.preventDefault(event);
-  $.ajax("/", {
-    type: "GET",
-  }).then(function (res) {
-    console.log("idk")
-    window.location.replace('/')
-  });
-});
-
 // updating the likes
 $("button.like").on("click", function (event) {
   event.preventDefault();
