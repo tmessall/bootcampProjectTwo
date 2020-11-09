@@ -62,7 +62,8 @@ function finishSignUp() {
         type: "POST",
         data: newUser
     }).then(function () {
-        window.location.replace('/');
+        localStorage.setItem("congoUser", Uname)
+        window.location.replace('/main');
     })
 }
 
