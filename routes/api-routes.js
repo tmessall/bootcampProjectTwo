@@ -2,7 +2,7 @@ var db = require("../models");
 
 // Routes
 // =============================================================
-module.exports = function(app) {
+module.exports = function (app) {
     // GET route to get products
     app.get("/api/products", function (req, res) {
         db.Product.findAll({}).then(function (dbProduct) {
@@ -14,6 +14,7 @@ module.exports = function(app) {
     app.post("/api/products", function (req, res) {
         db.Product.create({
             name: req.body.name,
+            userID: req.body.userID,
             description: req.body.description,
         }).then(function (dbProduct) {
             res.json(dbProduct);
@@ -36,7 +37,7 @@ module.exports = function(app) {
     app.put("/api/products", function (req, res) {
         db.Product.update({
             name: req.body.name,
-            username: req.body.username,
+            userID: req.body.userID,
             description: req.body.description,
             likes: req.body.likes,
             dislikes: req.body.dislikes
@@ -60,11 +61,35 @@ module.exports = function(app) {
     app.post("/api/users", function (req, res) {
         db.User.create({
             name: req.body.name,
-            password : req.body.password
+            password: req.body.password
         }).then(function (dbUser) {
             res.json(dbUser);
         });
     });
+
+    // GET route to login a user
+    app.get("/api/users/:login", function (req, res) {
+        db.User.findOne({
+            where: {
+                name: req.params.login
+            }
+        }).then(function (dbUser) {
+            res.json(dbUser);
+        });
+    });
+
+    // GET route to check by ID
+    app.get("/api/users/id/:id", function (req, res) {
+        var passedId = parseInt(req.params.id);
+        db.User.findOne({
+            where: {
+                id: passedId
+            }
+        }).then(function (dbUser) {
+            res.json(dbUser);
+        })
+    })
+
 
     // route to update likes
     app.put("/api/products/like/:id", function (req, res) {

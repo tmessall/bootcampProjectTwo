@@ -1,8 +1,16 @@
+span {
+    color: blue;
+}
+
 .title {
     background-color: #D4FCC3;
     text-align: center;
     font-style: oblique;
     padding : 30px 30px;
+}
+
+.welcoming {
+    text-align: right;
 }
 
 .alert {
@@ -21,7 +29,7 @@
     background-color: tomato;
 }
 
-.row{
+.product {
     background-color: #8CBCB9;
     border: gray 1px solid;
     padding-bottom: 15px;
