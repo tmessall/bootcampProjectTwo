@@ -1,5 +1,19 @@
 var userName = localStorage.getItem("congoUser");
-$("#hello").text(`Hello ${userName}!`)
+if (window.location.pathname == "/" && userName) {
+  window.location.replace("/main");
+}
+$("#hello").text(`Hello ${userName}!`);
+
+$("#logout").on("click", function (event) {
+  event.preventDefault(event);
+  localStorage.removeItem("congoUser");
+  window.location.replace("/")
+});
+
+$("#login").on("click", function (event) {
+  event.preventDefault(event);
+  window.location.replace("/login");
+})
 
 // Adding a new product on the main page
 $("#submission").on("click", function (event) {
