@@ -16,6 +16,7 @@ module.exports = function (app) {
             name: req.body.name,
             userID: req.body.userID,
             description: req.body.description,
+            imageUrl: req.body.imageUrl
         }).then(function (dbProduct) {
             res.json(dbProduct);
         });

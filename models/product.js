@@ -3,6 +3,7 @@ module.exports = function (sequelize, DataTypes) {
     name: DataTypes.STRING,
     userID: DataTypes.INTEGER,
     description: DataTypes.STRING,
+    imageUrl: DataTypes.STRING,
     likes: DataTypes.INTEGER,
     dislikes: DataTypes.INTEGER
   });

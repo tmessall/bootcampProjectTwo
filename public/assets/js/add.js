@@ -10,6 +10,7 @@ $("#submission").on("click", function (event) {
             name: $(".product").val(),
             userID: res.id,
             description: $(".description").val(),
+            imageUrl: $("#image").val()
         };
 
         $.ajax("/api/products", {
