@@ -6,9 +6,21 @@ USE congo_db;
 CREATE TABLE products (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
-    username VARCHAR(40) NOT NULL,
+    userID INTEGER NOT NULL,
     description TEXT NOT NULL,
+    imageUrl TEXT,
     likes INT default 0,
-    dislikes INT default 0
+    dislikes INT default 0,
+    createdAt TIMESTAMP,
+    updatedAt TIMESTAMP
+    
+);
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(40) NOT NULL,
+    password TEXT NULL,
+    createdAt TIMESTAMP,
+    updatedAt TIMESTAMP
 );
 

@@ -1,0 +1,27 @@
+<h1 class="title">Congo</h1>
+<div class="welcoming">
+  <p><span id="login">Log In or Sign Up</span></p>
+</div>
+<!--image-->
+{{#each allProducts}}
+<div class="container">
+  <div class="row product">
+    <div class="col-6">
+      <h2> {{this.name}}</h2>
+      <p id="postedBy" class="{{this.userID}}"></p>
+      <img id="car" class="card-img-top img-fluid" src="" alt="Picture of item" />
+    </div>
+
+    <!--sec col and bio par-->
+    <div class="col-4">
+      <section class="bio">
+        <!-- bio Paragraph -->
+        <p id="first-paragraph">{{this.description}}</p>
+      </section>
+    </div>
+  </div>
+</div>
+{{/each}}
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="assets/js/script.js"></script>
