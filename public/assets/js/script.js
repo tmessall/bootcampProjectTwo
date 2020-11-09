@@ -6,7 +6,6 @@ $("#submission").on("click", function (event) {
 
   var newProduct = {
     name: $(".product").val(),
-    username: $(".Uname").val(),
     description: $(".description").val(),
   };
 
@@ -85,7 +84,7 @@ function finishSignUp() {
 }
 
 // Allows user to continue to main page without logging in
-$("#guestLoad").on("click", function(event) {
+$("#guestLoad").on("click", function (event) {
   event.preventDefault(event);
   $.ajax("/", {
     type: "GET",
@@ -95,12 +94,41 @@ $("#guestLoad").on("click", function(event) {
   });
 });
 
-$("#signUpUser").on("click", function(event) {
-  event.preventDefault(event);
-  $.ajax("/signup", {
-    type: "GET",
+// updating the likes
+$("button.like").on("click", function (event) {
+  event.preventDefault();
+  var productId = event.target.id;
+  var like = $(this).data("like") + 1;
+  console.log(productId);
+  console.log(like);
+  var updatedLikes = {
+    likes: like
+  }
+  $.ajax("/api/products/like/" + productId, {
+    type: "PUT",
+    data: updatedLikes
   }).then(function (res) {
-    console.log("idk")
-    window.location.replace('/signup')
+    location.reload();
   });
+
+});
+
+// updating the dislikes
+$("button.dislike").on("click", function (event) {
+  event.preventDefault();
+  var productId = event.target.id;
+  var dislike = $(this).data("dislike") + 1;
+  var dislike2 = parseInt(dislike);
+  console.log(productId);
+  console.log(dislike2);
+  var updatedDislikes = {
+    dislikes: dislike2
+  }
+  $.ajax("/api/products/dislike/" + productId, {
+    type: "PUT",
+    data: updatedDislikes
+  }).then(function (res) {
+    location.reload();
+  });
+
 });

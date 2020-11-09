@@ -14,7 +14,6 @@ module.exports = function(app) {
     app.post("/api/products", function (req, res) {
         db.Product.create({
             name: req.body.name,
-            username: req.body.username,
             description: req.body.description,
         }).then(function (dbProduct) {
             res.json(dbProduct);
@@ -67,17 +66,30 @@ module.exports = function(app) {
         });
     });
 
-    app.get("/api/users/:login", function(req, res) {
-        db.User.findOne({
-          where: {
-            name: req.params.login
-          }
-        })
-          .then(function(dbPost) {
-            res.json(dbPost);
-          });
-      });
+    // route to update likes
+    app.put("/api/products/like/:id", function (req, res) {
+        db.Product.update({
+            likes: req.body.likes
+        }, {
+            where: {
+                id: req.params.id
+            }
+        }).then(function (dbProduct) {
+            res.json(dbProduct);
+        });
+    });
 
-   
+    // route to updated dislikes
+    app.put("/api/products/dislike/:id", function (req, res) {
+        db.Product.update({
+            dislikes: req.body.dislikes
+        }, {
+            where: {
+                id: req.params.id
+            }
+        }).then(function (dbProduct) {
+            res.json(dbProduct);
+        });
+    });
 
 };

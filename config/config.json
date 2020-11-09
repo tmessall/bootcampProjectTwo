@@ -1,8 +1,12 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
+    "password": "Kathmandu@123",
+=======
 
     "password": "Icuryy4me!",
+>>>>>>> main
     "database": "congo_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
