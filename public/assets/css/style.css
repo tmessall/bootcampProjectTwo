@@ -9,6 +9,10 @@ span {
     padding : 30px 30px;
 }
 
+.welcoming {
+    text-align: right;
+}
+
 .alert {
     color: red;
 }

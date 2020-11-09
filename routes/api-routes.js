@@ -2,7 +2,7 @@ var db = require("../models");
 
 // Routes
 // =============================================================
-module.exports = function(app) {
+module.exports = function (app) {
     // GET route to get products
     app.get("/api/products", function (req, res) {
         db.Product.findAll({}).then(function (dbProduct) {
@@ -60,11 +60,23 @@ module.exports = function(app) {
     app.post("/api/users", function (req, res) {
         db.User.create({
             name: req.body.name,
-            password : req.body.password
+            password: req.body.password
         }).then(function (dbUser) {
             res.json(dbUser);
         });
     });
+
+    // GET route to login a user
+    app.get("/api/users/:login", function (req, res) {
+        db.User.findOne({
+            where: {
+                name: req.params.login
+            }
+        }).then(function (dbPost) {
+            res.json(dbPost);
+        });
+    });
+
 
     // route to update likes
     app.put("/api/products/like/:id", function (req, res) {

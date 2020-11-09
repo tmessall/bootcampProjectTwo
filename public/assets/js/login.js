@@ -1,3 +1,5 @@
+$(".alert").hide();
+
 function checkPasswordDB() {
   return $("#password").val() == $("#confirmPassword").val();
 }
@@ -5,12 +7,12 @@ function checkPasswordDB() {
 // Allows user to continue to main page without logging in
 $("#guestLoad").on("click", function (event) {
   event.preventDefault(event);
-    window.location.replace('/')
+  window.location.replace('/')
 });
 
 $("#goSign").on("click", function (event) {
   event.preventDefault(event);
-    window.location.replace('/signup')
+  window.location.replace('/signup')
 })
 
 $("#submit").on("click", function (e) {
@@ -25,28 +27,21 @@ $("#submit").on("click", function (e) {
   $.ajax("/api/users/" + userNameInput, {
     type: "GET",
   }).then((res) => {
-    
-    // var dbPwd = (res.password);
-    // var dbUser = (res.name);
-    // if the password or username do not match the DB
-
     if (res === null || res === null) {
-        alert("Your username/password is incorrect. Please try again.")
+      $(".alert").show();
     }
 
     //if the username AND password match the DB, proceed to the home page (later to be member page)
-    else if (userPassword === res.password && userNameInput === res.name) {
-        $.ajax("/", {
-          type: "GET",
-        }).then(function (res) {
-          console.log("successful login");
-          window.location.replace("/");
-        }) 
-      } else  {
-
-        alert("Your username/password is incorrect. Please try again.")
-       
-      }
+    else if (hashPass === res.password && userNameInput === res.name) {
+      $.ajax("/", {
+        type: "GET",
+      }).then(function (res) {
+        localStorage.setItem("congoUser", userNameInput);
+        window.location.replace("/");
+      })
+    } else {
+      $(".alert").show();
+    }
   });
 
 

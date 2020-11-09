@@ -1,3 +1,6 @@
+var userName = localStorage.getItem("congoUser");
+$("#hello").text(`Hello ${userName}!`)
+
 // Adding a new product on the main page
 $("#submission").on("click", function (event) {
   event.preventDefault();
