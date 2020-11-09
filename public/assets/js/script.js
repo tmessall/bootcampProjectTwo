@@ -25,7 +25,15 @@ $("#addProduct").on("click", function (event) {
 })
 
 function includePosters() {
-  
+  $(".postedBy").each(function() {
+    var userID = parseInt($(this).attr('id'));
+    var curProd = $(this);
+    $.ajax("/api/users/id/" + userID, {
+      type: "GET"
+    }).then(function (res) {
+      curProd.text(`Posted by ${res.name}`)
+    })
+  })
 }
 
 // updating the likes

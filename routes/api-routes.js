@@ -73,10 +73,22 @@ module.exports = function (app) {
             where: {
                 name: req.params.login
             }
-        }).then(function (dbPost) {
-            res.json(dbPost);
+        }).then(function (dbUser) {
+            res.json(dbUser);
         });
     });
+
+    // GET route to check by ID
+    app.get("/api/users/id/:id", function (req, res) {
+        var passedId = parseInt(req.params.id);
+        db.User.findOne({
+            where: {
+                id: passedId
+            }
+        }).then(function (dbUser) {
+            res.json(dbUser);
+        })
+    })
 
 
     // route to update likes
