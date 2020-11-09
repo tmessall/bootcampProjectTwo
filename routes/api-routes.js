@@ -67,4 +67,17 @@ module.exports = function(app) {
         });
     });
 
+    app.get("/api/users/:login", function(req, res) {
+        db.User.findOne({
+          where: {
+            name: req.params.login
+          }
+        })
+          .then(function(dbPost) {
+            res.json(dbPost);
+          });
+      });
+
+   
+
 };
