@@ -1,36 +1,32 @@
+// Keeps user logged in between sessions
 var userName = localStorage.getItem("congoUser");
 if (window.location.pathname == "/" && userName) {
   window.location.replace("/main");
 }
 $("#hello").text(`Hello ${userName}!`);
 
+// Log out the user
 $("#logout").on("click", function (event) {
   event.preventDefault(event);
   localStorage.removeItem("congoUser");
   window.location.replace("/")
 });
 
+// Send user to login page
 $("#login").on("click", function (event) {
   event.preventDefault(event);
   window.location.replace("/login");
 })
 
-// Adding a new product on the main page
-$("#submission").on("click", function (event) {
-  event.preventDefault();
+// Send user to add product
+$("#addProduct").on("click", function (event) {
+  event.preventDefault(event);
+  window.location.replace("/add");
+})
 
-  var newProduct = {
-    name: $(".product").val(),
-    description: $(".description").val(),
-  };
-
-  $.ajax("/api/products", {
-    type: "POST",
-    data: newProduct
-  }).then(function () {
-    location.reload();
-  })
-});
+function includePosters() {
+  
+}
 
 // updating the likes
 $("button.like").on("click", function (event) {
@@ -70,3 +66,5 @@ $("button.dislike").on("click", function (event) {
   });
 
 });
+
+includePosters();

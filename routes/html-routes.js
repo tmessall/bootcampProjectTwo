@@ -8,6 +8,10 @@ module.exports = function (app) {
             res.render("guest", {allProducts: dbProduct});
         })
     });
+
+    app.get("/add", (req, res) => {
+        res.render("add");
+    })
     
     app.get("/login", (req, res) => {
         res.render("login");

@@ -14,6 +14,7 @@ module.exports = function (app) {
     app.post("/api/products", function (req, res) {
         db.Product.create({
             name: req.body.name,
+            userID: req.body.userID,
             description: req.body.description,
         }).then(function (dbProduct) {
             res.json(dbProduct);
@@ -36,7 +37,7 @@ module.exports = function (app) {
     app.put("/api/products", function (req, res) {
         db.Product.update({
             name: req.body.name,
-            username: req.body.username,
+            userID: req.body.userID,
             description: req.body.description,
             likes: req.body.likes,
             dislikes: req.body.dislikes
