@@ -95,3 +95,12 @@ $("#guestLoad").on("click", function(event) {
   });
 });
 
+$("#signUpUser").on("click", function(event) {
+  event.preventDefault(event);
+  $.ajax("/signup", {
+    type: "GET",
+  }).then(function (res) {
+    console.log("idk")
+    window.location.replace('/signup')
+  });
+});
