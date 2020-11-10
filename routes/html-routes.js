@@ -21,16 +21,11 @@ module.exports = function (app) {
         res.render("signup");
     });
 
-<<<<<<< HEAD
-    app.get("/products", (req, res) => {
-        res.render("allProducts")
-=======
     app.get("/main", (req, res) => {
         db.Product.findAll({raw: true}).then(function (dbProduct) {
             console.log(dbProduct);
             res.render("index", {allProducts: dbProduct});
         })
->>>>>>> main
     })
 };
 
