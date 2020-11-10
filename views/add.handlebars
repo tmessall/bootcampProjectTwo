@@ -1,4 +1,29 @@
 <!--item input-->
+<h1 class="title"><img class="center" id="logo" href="#" src="/assets/images/congo.png" alt="CONGO logo"
+            class="logo responsive-img" /> </h1>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="#" id="hello"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" id="search">Search</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="addProduct">Add a Product</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="" id="logout">Log Out</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
 <div class="container">
   <div class="row postproduct">
     <div class="col-4" style="width: 18rem;">
@@ -6,14 +31,14 @@
     <div class="col-4 input" style="width: 18rem;">
       <form>
         <h4>Product Name :</h4>
-        <textarea class="product" type="text" name="productName" placeholder="Enter Product Name"></textarea><br>
+        <textarea id="producttxt" type="text" name="productName" placeholder="Enter Product Name"></textarea><br>
       </form>
       <h4>Image Url : </h4>
       <form>
-        <textarea id="image" name="imageUrl" placeholder="Paste Image Url..."></textarea>
+        <textarea id="imagetxt" name="imageUrl" placeholder="Paste Image Url..."></textarea>
       </form>
       <h4>Brief Description : </h4>
-      <textarea class="description" name="message" rows="10" cols="30" placeholder="Brief Description..."></textarea>
+      <textarea id="descriptiontxt" name="message" rows="10" cols="30" placeholder="Brief Description..."></textarea>
       <br></br>
       <button id="submission" type="submit"> Submit </button>
     </div>
@@ -22,4 +47,5 @@
   </div>
 </div>
 <script src="https://code.jquery.com/jquery.js"></script>
-<script src="assets/js/add.js"></script>
+<script src="/assets/js/add.js"></script>
+<script src="/assets/js/script.js"></script>
