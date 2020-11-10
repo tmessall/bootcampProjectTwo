@@ -3,11 +3,21 @@ span {
 }
 
 .title {
-    background-color: rgb(135, 152, 159);
+    background-color: rgb(173, 183, 179);
     text-align: center;
     font-style: oblique;
     padding : 30px 30px;
 }
+
+nav {
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.navbar {
+    background-color: #fff1e6;
+}
+
 
 .welcoming {
     text-align: right;
