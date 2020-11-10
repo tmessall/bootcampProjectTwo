@@ -87,6 +87,15 @@ body {
 .login-box {
     background-color: rgb(205,194,156);
 }
+.guest {
+    margin-bottom: 20px
+}
+
+li input, li button {
+    height: 30px;
+    margin-top: 5px
+}
+
 
 
 

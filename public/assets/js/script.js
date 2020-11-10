@@ -5,6 +5,10 @@ if (window.location.pathname == "/" && userName) {
 }
 $("#hello").text(`Hello ${userName}!`);
 
+$(".title").on("click", function (event) {
+  window.location.replace("/")
+})
+
 // Log out the user
 $("#logout").on("click", function (event) {
   event.preventDefault(event);
@@ -16,6 +20,13 @@ $("#logout").on("click", function (event) {
 $("#login").on("click", function (event) {
   event.preventDefault(event);
   window.location.replace("/login");
+})
+
+$("#search").on("click", function (event) {
+  console.log("click")
+  event.preventDefault(event);
+  var searchFor = $("#searchText").val();
+  window.location.replace("/search/" + searchFor);
 })
 
 // Send user to add product
