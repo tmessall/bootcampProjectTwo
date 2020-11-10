@@ -1,4 +1,7 @@
-<h1 class="title">Congo</h1>
+
+<h1 class="title"><img id="logo" href="#" src="/assets/images/congo.png" alt="CONGO logo"
+            class="logo responsive-img" /> </h1>
+
 <nav class="navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="#" id="hello"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -38,16 +41,17 @@
       </section>
     </div>
   </div>
-</div>
-<!--like bottons-->
-<div class="buttons">
-  <div class="row">
-    <div class="col-1"></div>
-    <div class="col-4 ">
-      <button id="{{this.id}}" data-like="{{this.likes}}" class="btn btn-primary like"><i class="fa fa-thumbs-up"></i>
+
+  <!--like bottons-->
+  <div class="buttons">
+    <div class="row">
+      
+      <div class="col-4 ">
+        <button id="{{this.id}}" data-like="{{this.likes}}" class="btn btn-primary like"><i class="fa fa-thumbs-up"></i>
         {{this.likes}} Likes</button>
-      <button id="{{this.id}}" data-dislike="{{this.dislikes}}" class="btn btn-primary dislike"><i
+        <button id="{{this.id}}" data-dislike="{{this.dislikes}}" class="btn btn-primary dislike"><i
           class="fa fa-thumbs-up"></i>{{this.dislikes}} Dislikes</button>
+      </div>
     </div>
   </div>
 </div>
