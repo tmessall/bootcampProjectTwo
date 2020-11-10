@@ -70,6 +70,13 @@ body {
     margin-bottom: 20px
 }
 
+li input, li button {
+    height: 30px;
+    margin-top: 5px
+}
+
+
+
 
 
 

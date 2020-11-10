@@ -18,6 +18,13 @@ $("#login").on("click", function (event) {
   window.location.replace("/login");
 })
 
+$("#search").on("click", function (event) {
+  console.log("click")
+  event.preventDefault(event);
+  var searchFor = $("#searchText").val();
+  window.location.replace("/search/" + searchFor);
+})
+
 // Send user to add product
 $("#addProduct").on("click", function (event) {
   event.preventDefault(event);
