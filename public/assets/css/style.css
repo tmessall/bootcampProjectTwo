@@ -66,7 +66,9 @@ body {
 .login-box {
     background-color: rgb(173, 189, 179);
 }
-
+.guest {
+    margin-bottom: 20px
+}
 
 
 
