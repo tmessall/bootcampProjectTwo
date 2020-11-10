@@ -3,7 +3,7 @@ span {
 }
 
 .title {
-    background-color: #D4FCC3;
+    background-color: rgb(135, 152, 159);
     text-align: center;
     font-style: oblique;
     padding : 30px 30px;
@@ -30,7 +30,7 @@ span {
 }
 
 .product {
-    background-color: #8CBCB9;
+    background-color: rgb(173, 189, 179);
     border: gray 1px solid;
     padding-bottom: 15px;
     border-radius: 25px;
@@ -48,5 +48,16 @@ span {
 
 .buttons{
     padding: 5px 0px 15px 50px;
+}
+
+body {
+    background: url("/assets/images/OIHR970-e1522873047667.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.like, .dislike {
+    background-color: rgb(135, 152, 159);
+    color: black;
+    outline: none;
 }
 
