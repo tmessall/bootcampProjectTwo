@@ -5,6 +5,10 @@ if (window.location.pathname == "/" && userName) {
 }
 $("#hello").text(`Hello ${userName}!`);
 
+$(".title").on("click", function (event) {
+  window.location.replace("/")
+})
+
 // Log out the user
 $("#logout").on("click", function (event) {
   event.preventDefault(event);
