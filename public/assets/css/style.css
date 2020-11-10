@@ -9,6 +9,16 @@ span {
     padding : 30px 30px;
 }
 
+nav {
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.navbar {
+    background-color: #fff1e6;
+}
+
+
 .welcoming {
     text-align: right;
 }
