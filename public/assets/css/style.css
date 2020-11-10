@@ -61,3 +61,6 @@ body {
     outline: none;
 }
 
+.signupArea, .loginArea {
+    background-color: rgb(173, 189, 179);
+}
