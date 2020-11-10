@@ -35,7 +35,6 @@ nav {
 }
 .product, #image {
     background: url("/assets/images/OIHR970-e1522873047667.jpg");
-    border: gray 1px solid;
     padding-bottom: 15px;
     border-radius: 25px;
     font-style: italic;
@@ -50,6 +49,8 @@ nav {
 #first-paragraph {
     text-align: center;
     padding-left: 65px;
+    font-size: large;
+    font-family: inherit;
 }
 .productName {
     text-align: center;
