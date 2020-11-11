@@ -96,7 +96,10 @@ li input, li button {
     margin-top: 5px
 }
 
-
+#logo {
+    height: 150px;
+    width: auto
+}
 
 
 
